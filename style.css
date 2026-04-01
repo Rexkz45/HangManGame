@@ -1,41 +1,85 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-body {
-  height: 100vh;
-  background: linear-gradient(176deg, #0f23fa 15%, #0f85fa 43%, #0fe7fa 81%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container{
-    background-color: #fff;
+body{
+    height: 100vh;
+    background: linear-gradient(161deg, #0ae636 0%, #1a7506 35%, #197a08 54%, #ffffff 76%);
     display: flex;
-    padding: 40px 80px;
-    border-radius: 20px;
-}
-.container img{
-    width: 60%;
-}
-.container h2{
-    font-size: 1.45rem;
-    font-weight: 600;
-    /* text-align: center; */
-    margin-top: 10px;
-}
-.right .wordDisplay{
-    display: flex;
-    list-style-type: none;
-    gap: 10px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
 }
-.right .wordDisplay li{
-    border-bottom: 2px solid black;
-    height: 40px;
-    width: 40px;
+.container{
+    background-color: white;
+    border: 1px solid black;
+    padding: 40px 80px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    width: 900px;
+}
+.container .left img{
+    width: 75%;
+}
+.container .left h2{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
 
+}
+.right .wordDisplay{
+list-style-type: none;
+display: flex;
+gap: 20px;
+justify-content: center;
+margin-bottom: 20px;
+align-items: center;
+}
+.right .wordDisplay .letter{
+height: 60px;
+width: 60px;
+/* margin: 20px 30px 50px 60px ; */
+/* padding: 10px 20px 30px ; */
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom: 4px solid black;
+font-size: 28px;
+color: red;
+}
+.right .hintDisplay{
+    margin: 20px 0px;
+    font-size: 22px;
+    /* text-align: center; */
+}
+.right .hintDisplay b{
+    color: forestgreen;
+}
+.right .guessDisplay{
+     margin: 20px 0px;
+    font-size: 22px;
+}
+.right .guessDisplay b{
+    color: crimson;
+}
+.keyboard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.keyboard button{
+    font-size: 22px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    border: none;
+    scale: 0.9;
+    transition: all 0.5s ease;
+}
+.keyboard button:hover{
+    color: forestgreen;
+    background-color: black;
+    scale: 1.2;
 }
