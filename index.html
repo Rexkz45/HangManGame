@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="gameModal">
+        <div class="gameBox">
+            <img src="./assets/lost.gif" alt="">
+            <h2>You lost the game</h2>
+            <button>Play Again</button>
+        </div>
+    </div>
     <div class="container">
         <div class="left">
             <img src="./assets/hangman-0.svg" alt="hangManImage" class="hangPic">
@@ -20,7 +27,7 @@
                 <li class="letter"></li>
             </ul>
             <h4 class="hintDisplay">
-                hint: <b>asfasfasf</b>
+                hint: <b></b>
             </h4>
             <h4 class="guessDisplay">
                 Incrorrect <b>0/6</b>
@@ -30,6 +37,7 @@
             </div>
         </div>
     </div>
+    <script src="./wordList.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

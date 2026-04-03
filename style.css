@@ -75,11 +75,57 @@ color: red;
     border-radius: 12px;
     text-transform: uppercase;
     border: none;
-    scale: 0.9;
+    /* scale: 0.9; */
     transition: all 0.5s ease;
 }
 .keyboard button:hover{
     color: forestgreen;
     background-color: black;
-    scale: 1.2;
+    /* scale: 1.2; */
+}
+.gameModal{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+.gameModal .gameBox{
+background-color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 40px 10px;
+border-radius: 20px;
+box-shadow: 10px 10px 50px;
+}
+.gameModal .gameBox img{
+    width: 25%;
+}
+.gameModal .gameBox h2{
+    margin: 10px 0px;
+    color: forestgreen;
+    text-transform: capitalize;
+}
+.gameModal .gameBox button{
+padding: 12px 8px;
+font-size: 18px;
+border-radius: 7px;
+font-weight: bold;
+background-color: powderblue;
+border: none;
+color: black;
+transition: all 0.5s ease-in-out;
+}
+.gameModal .gameBox button:hover{
+background-color: rgb(92, 205, 220);
+font-size: 19px;
+
 }
