@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -49,6 +50,12 @@ border-bottom: 4px solid black;
 font-size: 28px;
 color: red;
 }
+.right .wordDisplay .letter.show{
+    border: none;
+    color: blue;
+    font-size: 35px;
+    text-transform: uppercase;
+}
 .right .hintDisplay{
     margin: 20px 0px;
     font-size: 22px;
@@ -82,6 +89,22 @@ color: red;
     color: forestgreen;
     background-color: black;
     /* scale: 1.2; */
+}
+.keyboard button:disabled{
+    pointer-events: none;
+    position: relative;
+}
+.keyboard button:disabled::after{
+    content: "X";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+     font-family: "Caveat", cursive;
+    left: 0;
+    top: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: red;
 }
 .gameModal{
     height: 100%;
