@@ -1,3 +1,5 @@
+// variables 
+
 const keyboard = document.querySelector(".keyboard");
 const hintDisplay = document.querySelector(".hintDisplay b");
 const guessDisplay = document.querySelector(".guessDisplay b");
@@ -9,6 +11,8 @@ let currentWord,
   wrongGuess = 0,
   correctWord = [];
 const maxGuess = 6;
+
+// reset the game the start from the beginning
 const resetGame=()=>{
   wrongGuess = 0,
   correctWord = [];
@@ -18,6 +22,8 @@ const resetGame=()=>{
     hangPic.src = `assets/hangman-${wrongGuess}.svg`;
      gameModal.classList.remove("mShow");
 }
+// function to show the game over modal with the appropriate message and image
+
 const gameOver = (isVictory) => {
   setTimeout(() => {
     if (isVictory) {
@@ -30,6 +36,10 @@ const gameOver = (isVictory) => {
     gameModal.classList.add("mShow");
   }, 800);
 };
+
+// function to select a random word from the list and 
+// display the hint and the blank spaces for the word
+
 const randomWord = () => {
   const { hint, word } = wordList[Math.floor(Math.random() * wordList.length)];
   wordDisplay.innerHTML = word
@@ -41,6 +51,8 @@ const randomWord = () => {
   console.log(word);
   currentWord = word;
 };
+// function to handle the game logic when
+//  a letter button is pressed
 const initGame = (button, pressedLetter) => {
   if (currentWord.includes(pressedLetter)) {
     [...currentWord].forEach((letter, index) => {
@@ -64,6 +76,9 @@ const initGame = (button, pressedLetter) => {
     gameOver(true);
   }
 };
+
+// create buttons for each letter of
+//  the alphabet and add event listeners to them
 
 for (let i = 97; i <= 122; i++) {
   const button = document.createElement("button");
