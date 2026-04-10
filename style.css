@@ -113,11 +113,16 @@ color: red;
     background-color: rgba(0, 0, 0, 0.3);
     left: 0;
     top: 0;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none;
     opacity: 0;
+}
+.gameModal.mShow{
+    pointer-events: auto;
+    opacity: 1;
 }
 .gameModal .gameBox{
 background-color: white;
