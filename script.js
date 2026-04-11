@@ -7,6 +7,20 @@ const wordDisplay = document.querySelector(".wordDisplay");
 const hangPic = document.querySelector(".hangPic");
 const gameModal = document.querySelector(".gameModal");
 const playAgain = document.querySelector(".playAgain");
+const btnClick=new Audio("sounds/btnclick.mp3");
+const gameWin=new Audio("sounds/win.mp3");
+const gameLost=new Audio("sounds/lost.mp3");
+const gameReset=new Audio("sounds/reset.mp3");
+
+
+
+// function to play the appropriate sound based on the game outcome
+function playSound(sound){
+    sound.currentTime=0;
+    sound.play();
+
+}
+
 let currentWord,
   wrongGuess = 0,
   correctWord = [];
@@ -27,9 +41,12 @@ const resetGame=()=>{
 const gameOver = (isVictory) => {
   setTimeout(() => {
     if (isVictory) {
+      playSound(gameWin);
       document.querySelector(".gameModal img").src = "assets/victory.gif";
       document.querySelector(".gameModal h2").innerHTML = "You Win The Game";
     } else {
+      playSound(gameLost);
+
       document.querySelector(".gameModal img").src = "assets/lost.gif";
       document.querySelector(".gameModal h2").innerHTML = "You Lost The Game";
     }
@@ -84,9 +101,11 @@ for (let i = 97; i <= 122; i++) {
   const button = document.createElement("button");
   button.innerHTML = String.fromCharCode(i);
   keyboard.appendChild(button);
+  button.addEventListener("click", () => playSound(btnClick));
   button.addEventListener("click", (e) =>
     initGame(e.target, String.fromCharCode(i)),
   );
 }
 randomWord();
 playAgain.addEventListener("click",randomWord);
+playAgain.addEventListener("click",() => playSound(gameReset));
